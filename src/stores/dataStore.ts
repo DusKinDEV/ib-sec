@@ -95,7 +95,7 @@ export const useDataStore = create<DataState>()(
         {
           id: '7',
           name: 'Limpopo',
-          title: '',
+          title: 'Região Autônoma',
           coatOfArms: 'https://static.rivalregions.com/static/regions_gerbs/15501_big.png?5'
         },
         {

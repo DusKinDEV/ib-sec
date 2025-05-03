@@ -118,54 +118,8 @@ export const useDataStore = create<DataState>()(
       error: null,
       
       fetchData: async (url: string) => {
-        set({ isLoading: true, error: null });
-        try {
-          // In a real application, this would fetch data from the RR API
-          // For now, we'll generate mock data
-          const mockEntries: ParliamentEntry[] = [];
-          const regions = get().autonomousRegions;
-          const constructions = ['Hospital', 'Estrada', 'Base Militar', 'Escola', 'Porto'];
-          
-          for (let i = 0; i < 90; i++) {
-            const date = new Date();
-            date.setDate(date.getDate() - i);
-            
-            const randomRegion = regions[Math.floor(Math.random() * regions.length)];
-            const randomConstruction = constructions[Math.floor(Math.random() * constructions.length)];
-            const lawId = Math.floor(Math.random() * 1000000) + 3000000;
-            
-            mockEntries.push({
-              id: `${date.getTime()}`,
-              date: date.toISOString(),
-              law: `Lei de Desenvolvimento - ${randomRegion.name}`,
-              lawUrl: `https://rivalregions.com/#law/details/${lawId}`,
-              region: randomRegion.name,
-              construction: randomConstruction,
-              resources: {
-                cash: Math.floor(Math.random() * 16000000),
-                gold: Math.floor(Math.random() * 7000),
-                bbl: Math.floor(Math.random() * 2400),
-                kg: Math.floor(Math.random() * 1300)
-              }
-            });
-          }
-          
-          const dataSources = get().dataSources.map(ds => 
-            ds.url === url ? { ...ds, lastFetched: new Date().toISOString() } : ds
-          );
-          
-          set({ 
-            entries: mockEntries,
-            dataSources,
-            isLoading: false 
-          });
-        } catch (error) {
-          console.error('Error fetching data:', error);
-          set({ 
-            isLoading: false, 
-            error: 'Erro ao buscar dados. Tente novamente mais tarde.' 
-          });
-        }
+        // Removed mock data generation to allow manual data entry
+        set({ isLoading: false, error: null });
       },
       
       addEntry: (entry) => {

@@ -1,0 +1,103 @@
+{
+  "general": {
+    "appName": "Secretaria de Autonomias - Império do Brasil (RR)",
+    "dashboard": "Dashboard",
+    "analysis": "Análise de Custos",
+    "admin": "Administração",
+    "login": "Login",
+    "logout": "Sair",
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "add": "Adicionar",
+    "export": "Exportar",
+    "search": "Buscar",
+    "noData": "Nenhum dado encontrado",
+    "confirm": "Confirmar",
+    "selectDate": "Selecionar data"
+  },
+  "auth": {
+    "username": "Usuário",
+    "password": "Senha",
+    "loginButton": "Entrar",
+    "loginError": "Usuário ou senha inválidos",
+    "welcomeBack": "Bem-vindo de volta"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "summary": "Resumo",
+    "recentLaws": "Leis Recentes",
+    "resourceDistribution": "Distribuição de Recursos",
+    "regionActivity": "Atividade por Região",
+    "todayCosts": "Custos de Hoje",
+    "weeklyTrend": "Tendência Semanal",
+    "lastUpdate": "Última atualização"
+  },
+  "analysis": {
+    "title": "Análise de Custos",
+    "totalSpent": "Total Gasto",
+    "byResource": "Gastos por Recurso",
+    "byRegion": "Gastos por Região",
+    "byLaw": "Gastos por Lei",
+    "timeRange": "Intervalo de Tempo",
+    "compareWith": "Comparar com",
+    "filters": "Filtros",
+    "generateReport": "Gerar Relatório",
+    "customDateRange": "Intervalo Personalizado"
+  },
+  "admin": {
+    "title": "Painel de Administração",
+    "dataSources": "Fontes de Dados",
+    "manualEntry": "Entrada Manual",
+    "settings": "Configurações",
+    "users": "Usuários",
+    "dataManagement": "Gerenciamento de Dados",
+    "urlsConfig": "Configuração de URLs",
+    "addUrl": "Adicionar URL",
+    "editUrl": "Editar URL",
+    "deleteUrl": "Remover URL",
+    "urlActive": "URL Ativa",
+    "fetchFrequency": "Frequência de Captura",
+    "lastFetch": "Última Captura",
+    "scheduleFetch": "Agendar Captura",
+    "manualFetch": "Capturar Agora"
+  },
+  "resources": {
+    "cash": "Cash",
+    "gold": "Ouro",
+    "bbl": "BBL",
+    "kg": "KG",
+    "total": "Total"
+  },
+  "forms": {
+    "required": "Campo obrigatório",
+    "invalid": "Valor inválido",
+    "success": "Operação realizada com sucesso",
+    "error": "Erro ao realizar operação",
+    "confirmDelete": "Tem certeza que deseja excluir?",
+    "dataUrl": "URL de Origem dos Dados",
+    "description": "Descrição",
+    "active": "Ativo",
+    "region": "Região",
+    "law": "Lei",
+    "construction": "Construção",
+    "date": "Data",
+    "value": "Valor"
+  },
+  "export": {
+    "title": "Exportar Dados",
+    "format": "Formato",
+    "excel": "Excel",
+    "pdf": "PDF",
+    "csv": "CSV",
+    "includeCharts": "Incluir Gráficos",
+    "dateRange": "Intervalo de Datas",
+    "allData": "Todos os Dados",
+    "preparing": "Preparando exportação...",
+    "ready": "Pronto para download",
+    "download": "Baixar"
+  }
+}

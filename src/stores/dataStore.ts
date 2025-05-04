@@ -45,9 +45,16 @@ interface DataState {
   addEntry: (entry: Omit<ParliamentEntry, 'id'>) => Promise<void>;
   updateEntry: (id: string, entry: Partial<ParliamentEntry>) => Promise<void>;
   deleteEntry: (id: string) => Promise<void>;
-  addDataSource: (dataSource: Omit<DataSource, 'id'>) => void;
-  updateDataSource: (id: string, dataSource: Partial<DataSource>) => void;
-  deleteDataSource: (id: string) => void;
+
+  fetchAutonomousRegions: () => Promise<void>;
+  addAutonomousRegion: (region: Omit<AutonomousRegion, 'id'>) => Promise<void>;
+  updateAutonomousRegion: (id: string, region: Partial<AutonomousRegion>) => Promise<void>;
+  deleteAutonomousRegion: (id: string) => Promise<void>;
+
+  fetchDataSources: () => Promise<void>;
+  addDataSource: (dataSource: Omit<DataSource, 'id'>) => Promise<void>;
+  updateDataSource: (id: string, dataSource: Partial<DataSource>) => Promise<void>;
+  deleteDataSource: (id: string) => Promise<void>;
 }
 
 export const useDataStore = create<DataState>((set, get) => ({
@@ -114,10 +121,10 @@ export const useDataStore = create<DataState>((set, get) => ({
   isLoading: false,
   error: null,
 
-fetchData: async () => {
+  fetchData: async () => {
     set({ isLoading: true, error: null });
     try {
-      const response = await axios.get('https://ib-sec.vercel.app/entries');
+      const response = await axios.get('http://localhost:4000/entries');
       set({ entries: response.data, isLoading: false });
     } catch (error) {
       set({ error: 'Failed to fetch entries', isLoading: false });
@@ -160,23 +167,95 @@ fetchData: async () => {
     }
   },
 
-  addDataSource: (dataSource) => {
-    const newDataSource = {
-      ...dataSource,
-      id: Date.now().toString()
-    };
-    set({ dataSources: [...get().dataSources, newDataSource] });
+  fetchAutonomousRegions: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await axios.get('http://localhost:4000/autonomousRegions');
+      set({ autonomousRegions: response.data, isLoading: false });
+    } catch (error) {
+      set({ error: 'Failed to fetch autonomous regions', isLoading: false });
+    }
   },
 
-  updateDataSource: (id, dataSource) => {
-    set({
-      dataSources: get().dataSources.map(ds =>
-        ds.id === id ? { ...ds, ...dataSource } : ds
-      )
-    });
+  addAutonomousRegion: async (region) => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await axios.post('http://localhost:4000/autonomousRegions', region);
+      set({ autonomousRegions: [...get().autonomousRegions, response.data], isLoading: false });
+    } catch (error) {
+      set({ error: 'Failed to add autonomous region', isLoading: false });
+    }
   },
 
-  deleteDataSource: (id) => {
-    set({ dataSources: get().dataSources.filter(ds => ds.id !== id) });
+  updateAutonomousRegion: async (id, region) => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await axios.put(`http://localhost:4000/autonomousRegions/${id}`, region);
+      set({
+        autonomousRegions: get().autonomousRegions.map(r => r.id === id ? response.data : r),
+        isLoading: false
+      });
+    } catch (error) {
+      set({ error: 'Failed to update autonomous region', isLoading: false });
+    }
+  },
+
+  deleteAutonomousRegion: async (id) => {
+    set({ isLoading: true, error: null });
+    try {
+      await axios.delete(`http://localhost:4000/autonomousRegions/${id}`);
+      set({
+        autonomousRegions: get().autonomousRegions.filter(r => r.id !== id),
+        isLoading: false
+      });
+    } catch (error) {
+      set({ error: 'Failed to delete autonomous region', isLoading: false });
+    }
+  },
+
+  fetchDataSources: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await axios.get('http://localhost:4000/dataSources');
+      set({ dataSources: response.data, isLoading: false });
+    } catch (error) {
+      set({ error: 'Failed to fetch data sources', isLoading: false });
+    }
+  },
+
+  addDataSource: async (dataSource) => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await axios.post('http://localhost:4000/dataSources', dataSource);
+      set({ dataSources: [...get().dataSources, response.data], isLoading: false });
+    } catch (error) {
+      set({ error: 'Failed to add data source', isLoading: false });
+    }
+  },
+
+  updateDataSource: async (id, dataSource) => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await axios.put(`http://localhost:4000/dataSources/${id}`, dataSource);
+      set({
+        dataSources: get().dataSources.map(ds => ds.id === id ? response.data : ds),
+        isLoading: false
+      });
+    } catch (error) {
+      set({ error: 'Failed to update data source', isLoading: false });
+    }
+  },
+
+  deleteDataSource: async (id) => {
+    set({ isLoading: true, error: null });
+    try {
+      await axios.delete(`http://localhost:4000/dataSources/${id}`);
+      set({
+        dataSources: get().dataSources.filter(ds => ds.id !== id),
+        isLoading: false
+      });
+    } catch (error) {
+      set({ error: 'Failed to delete data source', isLoading: false });
+    }
   }
 }));

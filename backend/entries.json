@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": "entry1",
+    "date": "2024-06-01",
+    "law": "Law 1",
+    "lawUrl": "http://example.com/law1",
+    "region": "Ducado de Serpa",
+    "construction": "Building A",
+    "resources": {
+      "cash": 1000,
+      "gold": 50,
+      "bbl": 200,
+      "kg": 300
+    }
+  },
+  {
+    "id": "entry2",
+    "date": "2024-06-02",
+    "law": "Law 2",
+    "lawUrl": "http://example.com/law2",
+    "region": "Viscondado da Paraíba",
+    "construction": "Building B",
+    "resources": {
+      "cash": 1500,
+      "gold": 70,
+      "bbl": 250,
+      "kg": 350
+    }
+  }
+]

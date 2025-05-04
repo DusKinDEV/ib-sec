@@ -114,10 +114,10 @@ export const useDataStore = create<DataState>((set, get) => ({
   isLoading: false,
   error: null,
 
-  fetchData: async () => {
+fetchData: async () => {
     set({ isLoading: true, error: null });
     try {
-      const response = await axios.get('http://localhost:4000/entries');
+      const response = await axios.get('https://ib-sec.vercel.app/entries');
       set({ entries: response.data, isLoading: false });
     } catch (error) {
       set({ error: 'Failed to fetch entries', isLoading: false });

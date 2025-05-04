@@ -40,5 +40,47 @@
       "bbl": 888000000000,
       "kg": 888000000000
     }
+  },
+  {
+    "id": "5b54e9b1-0fbb-4a86-8a3b-bd18f4da0cf9",
+    "date": "2025-05-04T00:00:00.000Z",
+    "law": "Fundo de Habitação",
+    "lawUrl": "https://rivalregions.com/#law/details/",
+    "region": "Limpopo",
+    "construction": "Estrada",
+    "resources": {
+      "cash": 0,
+      "gold": 0,
+      "bbl": 0,
+      "kg": 0
+    }
+  },
+  {
+    "id": "d34a7c07-90ca-49a7-931b-39372796a11e",
+    "date": "2025-05-04T00:00:00.000Z",
+    "law": "Fundo de Habitação",
+    "lawUrl": "https://rivalregions.com/#law/details/",
+    "region": "Ducado de Pernambuco",
+    "construction": "Estrada",
+    "resources": {
+      "cash": 0,
+      "gold": 0,
+      "bbl": 0,
+      "kg": 0
+    }
+  },
+  {
+    "id": "585d3e52-abda-4c48-9c5b-8f3e479a267c",
+    "date": "2025-05-04T00:00:00.000Z",
+    "law": "Escolas",
+    "lawUrl": "https://rivalregions.com/#law/details/",
+    "region": "Viscondado do Planalto",
+    "construction": "Escola",
+    "resources": {
+      "cash": 900000000000,
+      "gold": 900000000000,
+      "bbl": 900000000000,
+      "kg": 900000000000
+    }
   }
 ]

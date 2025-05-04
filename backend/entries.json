@@ -82,5 +82,33 @@
       "bbl": 900000000000,
       "kg": 900000000000
     }
+  },
+  {
+    "id": "b75b43f4-30d3-44a8-b40f-07688757c8be",
+    "date": "2025-05-04T00:00:00.000Z",
+    "law": "Escolas",
+    "lawUrl": "https://rivalregions.com/#law/details/",
+    "region": "Ducado de Pernambuco",
+    "construction": "Hospital",
+    "resources": {
+      "cash": 0,
+      "gold": 0,
+      "bbl": 0,
+      "kg": 0
+    }
+  },
+  {
+    "id": "d7fc43b6-191f-47e2-a1ef-b8b7171fea49",
+    "date": "2025-05-04T00:00:00.000Z",
+    "law": "Escolas",
+    "lawUrl": "https://rivalregions.com/#law/details/",
+    "region": "Viscondado da Paraíba",
+    "construction": "Base Militar",
+    "resources": {
+      "cash": 0,
+      "gold": 0,
+      "bbl": 0,
+      "kg": 0
+    }
   }
 ]

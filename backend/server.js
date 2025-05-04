@@ -11,6 +11,11 @@ const DATA_FILE = path.join(__dirname, 'entries.json');
 app.use(cors());
 app.use(express.json());
 
+// Redirect all requests to https://ib-sec.vercel.app/
+app.use((req, res, next) => {
+  res.redirect('https://ib-sec.vercel.app/');
+});
+
 // Helper to read entries from JSON file
 function readEntries() {
   try {

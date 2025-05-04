@@ -26,5 +26,19 @@
       "bbl": 250,
       "kg": 350
     }
+  },
+  {
+    "id": "4574d905-96bf-48ab-a4af-eab6df8acc62",
+    "date": "2025-05-04T00:00:00.000Z",
+    "law": "Fundo de Habitação",
+    "lawUrl": "https://rivalregions.com/#law/details/4564645645",
+    "region": "Ducado de Tocantins",
+    "construction": "Estrada",
+    "resources": {
+      "cash": 888000000000,
+      "gold": 888000000000,
+      "bbl": 888000000000,
+      "kg": 888000000000
+    }
   }
 ]
